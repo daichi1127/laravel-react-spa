@@ -53,6 +53,17 @@ function Home() {
                 console.log('通信に失敗しました');
             });
     }
+    //空配列として定義する
+    let rows = [];
+    //postsの要素ごとにrowsで使える形式に変換する
+    posts.map((post) =>
+        rows.push({
+            name: post.name,
+            content: post.content,
+            editBtn: <Button color="secondary" variant="contained">編集</Button>,
+            deleteBtn: <Button color="primary" variant="contained">完了</Button>,
+        })
+    );
 
     return (
         <div className="container">
